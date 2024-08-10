@@ -2,16 +2,16 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1723278665,
-        "narHash": "sha256-1kWgcNDXCwGwrMaaHH+5XxwXWKABVzOrA/UuDAPs/0M=",
+        "lastModified": 1723282178,
+        "narHash": "sha256-uNEyTKr350+AHRvsFRDuLPEf4mTHMuHbj6dHU20O8Bs=",
         "owner": "eljamm",
         "repo": "nixpkgs",
-        "rev": "ce4b70f9f413bc3f4b34481d2bd88ea1cc70f30e",
+        "rev": "2c424ee165bd18d690b41af007c654079a68f940",
         "type": "github"
       },
       "original": {
         "owner": "eljamm",
-        "ref": "nix-rust-debug-3",
+        "ref": "nix-rust-debug-4",
         "repo": "nixpkgs",
         "type": "github"
       }

@@ -17,3 +17,15 @@ jobs:
         run: |
           set -x
           ./show-source-info.sh
+
+  nix-linux:
+    name: build in nix on linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v13
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: build
+        run: |
+          set -x
+          ./show-source-info.sh

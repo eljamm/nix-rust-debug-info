@@ -59,6 +59,7 @@ stdenv.mkDerivation {
     ]
     ++ lib.optionals stdenv.isDarwin [
       (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14")
+      (lib.cmakeFeature "CMAKE_INSTALL_LIBDIR" "${placeholder "lib"}/lib")
     ];
 
   doCheck = true;

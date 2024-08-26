@@ -58,13 +58,7 @@ stdenv.mkDerivation {
     ]
     ++ lib.optionals stdenv.isDarwin [
       (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14")
-
-      # Specify GNUInstallDirs values
-      (lib.cmakeFeature "CMAKE_INSTALL_PREFIX" "${placeholder "out"}")
-      (lib.cmakeFeature "CMAKE_INSTALL_BINDIR/bin" "${placeholder "out"}")
-      (lib.cmakeFeature "CMAKE_INSTALL_INCLUDEDIR/include" "${placeholder "dev"}")
-      (lib.cmakeFeature "CMAKE_INSTALL_LIBDIR/lib" "${placeholder "lib"}")
-      (lib.cmakeFeature "CMAKE_INSTALL_LIBEXECDIR/libexec" "${placeholder "lib"}")
+      (lib.cmakeFeature "CMAKE_BUILD_WITH_INSTALL_NAME_DIR" "ON")
     ];
 
   doCheck = true;

@@ -12,7 +12,6 @@
   pkg-config,
   python3,
   tbb_2021_11,
-  fixDarwinDylibNames,
 }:
 stdenv.mkDerivation {
   pname = "naja";
@@ -42,7 +41,7 @@ stdenv.mkDerivation {
     flex
     pkg-config
     python3
-  ] ++ lib.optionals stdenv.isDarwin [ fixDarwinDylibNames ];
+  ];
 
   buildInputs = [
     boost
@@ -59,8 +58,13 @@ stdenv.mkDerivation {
     ]
     ++ lib.optionals stdenv.isDarwin [
       (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14")
-      (lib.cmakeFeature "CMAKE_INSTALL_LIBDIR" "${placeholder "lib"}/lib")
     ];
+
+  postInstall = lib.optionalString stdenv.hostPlatform.isDarwin ''
+    for badLib in $out/lib/lib*.dylib; do
+      install_name_tool -change "$lib"/lib/"$(basename "$badLib")" "$badLib" $out/bin/naja_edit
+    done
+  '';
 
   doCheck = true;
 

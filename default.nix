@@ -51,10 +51,14 @@ stdenv.mkDerivation {
     tbb_2021_11
   ];
 
-  cmakeFlags = [
-    (lib.cmakeBool "CPPTRACE_USE_EXTERNAL_LIBDWARF" true)
-    (lib.cmakeBool "CPPTRACE_USE_EXTERNAL_ZSTD" true)
-  ];
+  cmakeFlags =
+    [
+      (lib.cmakeBool "CPPTRACE_USE_EXTERNAL_LIBDWARF" true)
+      (lib.cmakeBool "CPPTRACE_USE_EXTERNAL_ZSTD" true)
+    ]
+    ++ lib.optionals stdenv.isDarwin [
+      (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14") # For aligned allocation
+    ];
 
   doCheck = true;
 
@@ -67,6 +71,5 @@ stdenv.mkDerivation {
     ];
     mainProgram = "naja_edit";
     platforms = lib.platforms.all;
-    # "aligned deallocation function of type [...] is only available on macOS 10.13 or newer" even with 11.0 SDK
   };
 }

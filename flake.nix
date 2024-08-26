@@ -31,10 +31,7 @@
           };
         in
         {
-          naja = pkgs.callPackage ./. {
-            stdenv =
-              if pkgs.stdenv.hostPlatform.isDarwin then pkgs.darwin.apple_sdk_11_0.stdenv else pkgs.stdenv;
-          };
+          naja = pkgs.darwin.apple_sdk_11_0.callPackage ./. { };
         };
     });
 }

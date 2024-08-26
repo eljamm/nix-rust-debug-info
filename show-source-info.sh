@@ -13,5 +13,7 @@ main() {
   rm -f ./result-naja
 
   nix build .#naja --out-link ./result-naja "${args[@]}"
+
+  exec ./result-naja/bin/naja_edit -h
 }
 main "$@"

@@ -31,7 +31,7 @@
           };
         in
         {
-          naja = pkgs.darwin.apple_sdk_11_0.callPackage ./. { };
+          naja = pkgs.callPackage ./. { };
         };
     });
 }

@@ -26,10 +26,18 @@ stdenv.mkDerivation {
   };
 
   outputs = [
-    "dev"
-    "lib"
     "out"
+    "lib"
+    "dev"
   ];
+
+  prePatch = ''
+    for dir in snl/CMakeLists.txt python/pyloader/CMakeLists.txt; do
+      substituteInPlace src/snl/$dir \
+        --replace-fail 'DESTINATION lib' 'DESTINATION ''${CMAKE_INSTALL_LIBDIR}' \
+        --replace-fail 'DESTINATION include' 'DESTINATION ''${CMAKE_INSTALL_INCLUDEDIR}'
+    done
+  '';
 
   strictDeps = true;
 
@@ -57,7 +65,7 @@ stdenv.mkDerivation {
       (lib.cmakeBool "CPPTRACE_USE_EXTERNAL_ZSTD" true)
     ]
     ++ lib.optionals stdenv.isDarwin [
-      (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14")
+      (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14") # For aligned allocation
     ];
 
   doCheck = true;

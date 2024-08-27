@@ -25,7 +25,7 @@ stdenv.mkDerivation {
     fetchSubmodules = true;
   };
 
-  outputs = [
+  outputs = lib.optionals (!stdenv.isDarwin) [
     "out"
     "lib"
     "dev"

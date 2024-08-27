@@ -5,7 +5,7 @@ set -x
 
 main() {
   local args=(
-    --option sandbox false
+    --option sandbox true
     --show-trace
     --print-build-logs
   )

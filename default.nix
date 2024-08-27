@@ -25,6 +25,11 @@ stdenv.mkDerivation {
     fetchSubmodules = true;
   };
 
+  postPatch = lib.optionalString stdenv.isDarwin ''
+    substituteInPlace CMakeLists.txt \
+      --replace-fail 'CMAKE_INSTALL_RPATH "''${CMAKE_INSTALL_PREFIX}/lib"' 'CMAKE_INSTALL_RPATH "''${CMAKE_INSTALL_FULL_LIBDIR}"'
+  '';
+
   strictDeps = true;
 
   nativeBuildInputs = [

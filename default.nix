@@ -20,8 +20,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "najaeda";
     repo = "naja";
-    rev = "b687261ed2e3b273acd8fa25f078a0409ee30b26";
-    hash = "sha256-f4jUAE3mSvdShtNgwKPMAEBQyT1PAaoFNnWwFCDjeD4=";
+    rev = "cc7df7358a078a6d8dc6e6045ac1be2b78eb6341";
+    hash = "sha256-EdUc//EKERfjt9w2SQbTGHXBahnpWEpG8hPHSV8o2sA=";
     fetchSubmodules = true;
   };
 
@@ -30,14 +30,6 @@ stdenv.mkDerivation {
     "lib"
     "dev"
   ];
-
-  prePatch = ''
-    for dir in snl/CMakeLists.txt python/pyloader/CMakeLists.txt; do
-      substituteInPlace src/snl/$dir \
-        --replace-fail 'DESTINATION lib' 'DESTINATION ''${CMAKE_INSTALL_LIBDIR}' \
-        --replace-fail 'DESTINATION include' 'DESTINATION ''${CMAKE_INSTALL_INCLUDEDIR}'
-    done
-  '';
 
   strictDeps = true;
 

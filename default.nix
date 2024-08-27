@@ -25,12 +25,6 @@ stdenv.mkDerivation {
     fetchSubmodules = true;
   };
 
-  outputs = lib.optionals stdenv.isLinux [
-    "out"
-    "lib"
-    "dev"
-  ];
-
   strictDeps = true;
 
   nativeBuildInputs = [

@@ -20,21 +20,16 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "najaeda";
     repo = "naja";
-    rev = "cc7df7358a078a6d8dc6e6045ac1be2b78eb6341";
-    hash = "sha256-EdUc//EKERfjt9w2SQbTGHXBahnpWEpG8hPHSV8o2sA=";
+    rev = "ca7a544d16abb31d6992e702ccbd97be3a644c08";
+    hash = "sha256-lmgXv2nmmjKph0Tf9ZvV3kQBtbiGXYA7jrE77cgM+KU=";
     fetchSubmodules = true;
   };
 
   outputs = [
-    "dev"
-    "lib"
     "out"
+    "lib"
+    "dev"
   ];
-
-  postPatch = lib.optionalString stdenv.isDarwin ''
-    substituteInPlace CMakeLists.txt \
-      --replace-fail 'CMAKE_INSTALL_RPATH "''${CMAKE_INSTALL_PREFIX}/lib"' 'CMAKE_INSTALL_RPATH "''${CMAKE_INSTALL_FULL_LIBDIR}"'
-  '';
 
   strictDeps = true;
 

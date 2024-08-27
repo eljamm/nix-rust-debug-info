@@ -25,6 +25,12 @@ stdenv.mkDerivation {
     fetchSubmodules = true;
   };
 
+  outputs = [
+    "dev"
+    "lib"
+    "out"
+  ];
+
   postPatch = lib.optionalString stdenv.isDarwin ''
     substituteInPlace CMakeLists.txt \
       --replace-fail 'CMAKE_INSTALL_RPATH "''${CMAKE_INSTALL_PREFIX}/lib"' 'CMAKE_INSTALL_RPATH "''${CMAKE_INSTALL_FULL_LIBDIR}"'

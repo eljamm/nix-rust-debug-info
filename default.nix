@@ -15,13 +15,13 @@
 }:
 stdenv.mkDerivation {
   pname = "naja";
-  version = "0-unstable-2024-07-21";
+  version = "0-unstable-2024-08-27";
 
   src = fetchFromGitHub {
     owner = "najaeda";
     repo = "naja";
-    rev = "8c068f3bd1bbd57b851547f191a58a375fd35cda";
-    hash = "sha256-aUYPJGr4D5n92fp0namPT6I/gMRZoF7YHnB7GoRzwYI=";
+    rev = "b687261ed2e3b273acd8fa25f078a0409ee30b26";
+    hash = "sha256-f4jUAE3mSvdShtNgwKPMAEBQyT1PAaoFNnWwFCDjeD4=";
     fetchSubmodules = true;
   };
 
@@ -59,12 +59,6 @@ stdenv.mkDerivation {
     ++ lib.optionals stdenv.isDarwin [
       (lib.cmakeFeature "CMAKE_OSX_DEPLOYMENT_TARGET" "10.14")
     ];
-
-  postInstall = lib.optionalString stdenv.hostPlatform.isDarwin ''
-    for badLib in $out/lib/lib*.dylib; do
-      install_name_tool -change "$lib"/lib/"$(basename "$badLib")" "$badLib" $out/bin/naja_edit
-    done
-  '';
 
   doCheck = true;
 

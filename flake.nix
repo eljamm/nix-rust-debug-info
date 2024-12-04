@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:eljamm/nixpkgs/nix-naja";
+  inputs.nixpkgs.url = "github:eljamm/nixpkgs/init/010editor";
   outputs =
     { nixpkgs, ... }:
     let
@@ -16,22 +16,15 @@
     eachSystem (system: {
       packages =
         let
-          pkgs = nixpkgs.legacyPackages.${system};
-          sysrootPkgs = import nixpkgs {
+          pkgs = import nixpkgs {
             inherit system;
-            crossSystem = {
-              inherit system;
-              rust.rustcTargetSpec =
-                {
-                  aarch64-darwin = ./aarch64-apple-darwin.json;
-                  x86_64-linux = ./x86_64-unknown-linux-gnu.json;
-                }
-                .${system};
+            config = {
+              allowUnfree = true;
             };
           };
         in
         {
-          naja = pkgs.callPackage ./. { };
+          inherit (pkgs) _010editor;
         };
     });
 }

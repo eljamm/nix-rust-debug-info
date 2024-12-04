@@ -10,10 +10,10 @@ main() {
     --print-build-logs
   )
 
-  rm -f ./result-naja
+  rm -f ./result
 
-  nix build .#naja --out-link ./result-naja "${args[@]}"
+  nix build .#_010editor --out-link ./result "${args[@]}"
 
-  exec ./result-naja/bin/naja_edit -h
+  # exec ./result-naja/bin/naja_edit -h
 }
 main "$@"

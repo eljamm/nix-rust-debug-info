@@ -24,7 +24,7 @@
           };
         in
         {
-          inherit (pkgs) _010editor;
+          _010editor = pkgs.callPackage ./. { };
         };
     });
 }

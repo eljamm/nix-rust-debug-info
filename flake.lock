@@ -2,16 +2,16 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1733347802,
-        "narHash": "sha256-RgQBQdrK3ry7/zrEVreidHn/946m/1DcV/5smdV4knk=",
+        "lastModified": 1735234402,
+        "narHash": "sha256-cg8HCoFfp65YsRhrfDYGrOcWLmXVvZm1w2Ep5ZTHn60=",
         "owner": "eljamm",
         "repo": "nixpkgs",
-        "rev": "c0f54bd2d58b2689e390f30af89a6ccbf12b51da",
+        "rev": "235c2ca93e7fc05eabaa91faa814a4572c6abba2",
         "type": "github"
       },
       "original": {
         "owner": "eljamm",
-        "ref": "init/010editor",
+        "ref": "fix/triton-llvm-tests",
         "repo": "nixpkgs",
         "type": "github"
       }

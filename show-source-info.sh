@@ -12,7 +12,7 @@ main() {
 
   rm -f ./result
 
-  nix build .#_010editor --out-link ./result "${args[@]}"
+  nix build .#triton-llvm --out-link ./result "${args[@]}"
 
   # exec ./result-naja/bin/naja_edit -h
 }

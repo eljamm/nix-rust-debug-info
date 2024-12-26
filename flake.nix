@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:eljamm/nixpkgs/init/010editor";
+  inputs.nixpkgs.url = "github:eljamm/nixpkgs/fix/triton-llvm-tests";
   outputs =
     { nixpkgs, ... }:
     let
@@ -25,6 +25,7 @@
         in
         {
           _010editor = pkgs.callPackage ./. { };
+          inherit (pkgs) triton-llvm;
         };
     });
 }

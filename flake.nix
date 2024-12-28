@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:eljamm/nixpkgs/fix/triton-llvm-tests";
+  inputs.nixpkgs.url = "github:GaetanLepage/nixpkgs/triton";
   outputs =
     { nixpkgs, ... }:
     let

@@ -25,7 +25,7 @@
         in
         {
           _010editor = pkgs.callPackage ./. { };
-          inherit (pkgs) triton-llvm;
+          inherit (pkgs) triton-llvm voicevox;
         };
     });
 }

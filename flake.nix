@@ -1,5 +1,7 @@
 {
-  inputs.nixpkgs.url = "github:GaetanLepage/nixpkgs/triton";
+  # NOTE: I really need to improve this whole workflow, but this works well
+  # enough for now, I guess
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/b6a15634cacb4ad8bc5460ddc8ad0b9ba7bccda4";
   outputs =
     { nixpkgs, ... }:
     let

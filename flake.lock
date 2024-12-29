@@ -2,17 +2,17 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1735383582,
-        "narHash": "sha256-0wPTBco5+5yU8oQHvI0PX4/RBdaJvo9VE/ulBX36sng=",
-        "owner": "GaetanLepage",
+        "lastModified": 1735472246,
+        "narHash": "sha256-LFKxgvO1WSVrQoV0y8WgCAtKL+xIDAHAFfSG0zQJbvg=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7a213c153feda6f1186af949ac0f7337d31658d5",
+        "rev": "b6a15634cacb4ad8bc5460ddc8ad0b9ba7bccda4",
         "type": "github"
       },
       "original": {
-        "owner": "GaetanLepage",
-        "ref": "triton",
+        "owner": "NixOS",
         "repo": "nixpkgs",
+        "rev": "b6a15634cacb4ad8bc5460ddc8ad0b9ba7bccda4",
         "type": "github"
       }
     },

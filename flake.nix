@@ -1,7 +1,7 @@
 {
   # NOTE: I really need to improve this whole workflow, but this works well
   # enough for now, I guess
-  inputs.nixpkgs.url = "github:eljamm/nixpkgs/imhex";
+  inputs.nixpkgs.url = "github:TomaSajt/nixpkgs/voicevox";
   outputs =
     { nixpkgs, ... }:
     let

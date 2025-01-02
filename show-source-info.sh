@@ -12,7 +12,7 @@ main() {
 
   rm -f ./result
 
-  nix build .#imhex --out-link ./result "${args[@]}"
+  nix build .#voicevox --out-link ./result "${args[@]}"
 
   # exec ./result-naja/bin/naja_edit -h
 }

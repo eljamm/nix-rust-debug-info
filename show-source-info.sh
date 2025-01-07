@@ -12,8 +12,6 @@ main() {
 
   rm -f ./result
 
-  nix build .#voicevox --out-link ./result "${args[@]}"
-
-  # exec ./result-naja/bin/naja_edit -h
+  nix build .#hatch --out-link ./result "${args[@]}"
 }
 main "$@"

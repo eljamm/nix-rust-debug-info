@@ -1,7 +1,7 @@
 {
   # NOTE: I really need to improve this whole workflow, but this works well
   # enough for now, I guess
-  inputs.nixpkgs.url = "github:eljamm/nixpkgs/voicevox-test";
+  inputs.nixpkgs.url = "github:eljamm/nixpkgs/update/hatch";
   outputs =
     { nixpkgs, ... }:
     let
@@ -27,7 +27,12 @@
         in
         {
           _010editor = pkgs.callPackage ./. { };
-          inherit (pkgs) triton-llvm voicevox imhex;
+          inherit (pkgs)
+            hatch
+            imhex
+            triton-llvm
+            voicevox
+            ;
         };
     });
 }

@@ -12,6 +12,6 @@ main() {
 
   rm -f ./result
 
-  nix build .#hatch --out-link ./result "${args[@]}"
+  nix build .#manim --out-link ./result "${args[@]}"
 }
 main "$@"

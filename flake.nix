@@ -1,7 +1,7 @@
 {
   # NOTE: I really need to improve this whole workflow, but this works well
   # enough for now, I guess
-  inputs.nixpkgs.url = "github:eljamm/nixpkgs/update/hatch";
+  inputs.nixpkgs.url = "github:eljamm/nixpkgs/moderngl-mesa-platforms";
   outputs =
     { nixpkgs, ... }:
     let
@@ -32,6 +32,7 @@
             imhex
             triton-llvm
             voicevox
+            manim
             ;
         };
     });

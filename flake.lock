@@ -2,16 +2,16 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1736253464,
-        "narHash": "sha256-efec7I6Wp9z/7nqnuS85HL8nwVfypJG5Nf3YB9mNMqI=",
+        "lastModified": 1736333194,
+        "narHash": "sha256-2jin2ZSI8VAS1HljhCweZTvcywrRr2LBxynbOTboroA=",
         "owner": "eljamm",
         "repo": "nixpkgs",
-        "rev": "1a3f7b2b1e1fc03e3d643f0089feb40710ec747c",
+        "rev": "16a02a92346901bb61a1801981711c7b1bbaeb0c",
         "type": "github"
       },
       "original": {
         "owner": "eljamm",
-        "ref": "update/hatch",
+        "ref": "moderngl-mesa-platforms",
         "repo": "nixpkgs",
         "type": "github"
       }
